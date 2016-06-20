@@ -110,7 +110,8 @@ namespace ECCI_Gato
             else
                 ((Button)Sender).Text = "0";
             ((Button)Sender).Enabled = false; //Disable the button once it is clicked
-            string[] arreglo = { coordinadas[0].ToString(), coordinadas[1].ToString(), gato.jugadorActual() };
+                                              //  string[] arreglo = { coordinadas[0].ToString(), coordinadas[1].ToString(), gato.jugadorActual() };
+            string arreglo = coordinadas[0].ToString() + "," + coordinadas[1].ToString() + "," + gato.jugadorActual();
             gato.mover(arreglo);
             revisarGanador();
         }
