@@ -110,7 +110,6 @@ namespace ECCI_Gato
             else
                 ((Button)Sender).Text = "0";
             ((Button)Sender).Enabled = false; //Disable the button once it is clicked
-                                              //  string[] arreglo = { coordinadas[0].ToString(), coordinadas[1].ToString(), gato.jugadorActual() };
             string arreglo = coordinadas[0].ToString() + "," + coordinadas[1].ToString() + "," + gato.jugadorActual();
             gato.mover(arreglo);
             revisarGanador();
@@ -120,13 +119,26 @@ namespace ECCI_Gato
         {
             if (clickNo > 4)
             {
+               if ((gato.terminado()) == "X")
+                {
+                    desplegarGanador(1, "X");
+                }
 
+                if ((gato.terminado()) == "O")
+                {
+                    desplegarGanador(1, "O");
+                }
+
+                if ((gato.terminado()) == "Empate")
+                {
+                    desplegarGanador(1, "Empate");
+                }
             }
         }
 
-        private void desplegarGanador()
+        private void desplegarGanador(int x, string jugador)
         {
-            int x = 0;
+           // int x = 0;
 
             if (x == 0)
             {
@@ -137,14 +149,7 @@ namespace ECCI_Gato
             if (x == 1)
             {
 
-                ScriptManager.RegisterStartupScript(this, GetType(), "El ganador fue: ", "alertMessage();", true);
-            }
-
-            if (x == -1)
-            {
-
-                ScriptManager.RegisterStartupScript(this, GetType(), "El ganador fue: ", "alertMessage();", true);
-
+                ScriptManager.RegisterStartupScript(this, GetType(), "El ganador fue: " + jugador, "alertMessage();", true);
             }
 
         }
