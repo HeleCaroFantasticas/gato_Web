@@ -10,6 +10,8 @@ namespace ECCI_Gato
 {
     public partial class Juego : System.Web.UI.Page
     {
+        private ECCI_GatoService.ECCI_GatoPortClient gato;
+
         private int clickedByPlayerNo, clickNo;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +22,7 @@ namespace ECCI_Gato
         {
             Limpiartablero(true);
             clickNo = 0;
+            gato = new ECCI_GatoService.ECCI_GatoPortClient();
         }
 
         protected void Limpiartablero(bool a)
@@ -101,20 +104,14 @@ namespace ECCI_Gato
         {
             clickNo += 1; //Increase no. of clicks every time a button is clicked
 
-            //All odd numbered clicks are done by 1st player and all even numbered clicks are done by 2nd player.
-            if (clickNo % 2 == 1)
-                clickedByPlayerNo = 1;
-            else
-                clickedByPlayerNo = 2;
 
-
-            //for 1st player, assign 'X' and for 2nd player assign '0'
-            if (clickedByPlayerNo == 1)
+            if ((gato.jugadorActual()) == "X")
                 ((Button)Sender).Text = "X";
             else
                 ((Button)Sender).Text = "0";
             ((Button)Sender).Enabled = false; //Disable the button once it is clicked
-
+            string[] arreglo = { coordinadas[0].ToString(), coordinadas[1].ToString(), gato.jugadorActual() };
+            gato.mover(arreglo);
             revisarGanador();
         }
 
