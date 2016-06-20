@@ -90,3 +90,6 @@ C:\Users\Carolina\documents\visual studio 2015\Projects\ECCI_Gato\ECCI_Gato\bin\
 C:\Users\Carolina\documents\visual studio 2015\Projects\ECCI_Gato\ECCI_Gato\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 C:\Users\Carolina\documents\visual studio 2015\Projects\ECCI_Gato\ECCI_Gato\obj\Debug\ECCI_Gato.dll
 C:\Users\Carolina\documents\visual studio 2015\Projects\ECCI_Gato\ECCI_Gato\obj\Debug\ECCI_Gato.pdb
+C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\obj\Debug\ECCI_Gato.csprojResolveAssemblyReference.cache
+C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\obj\Debug\ECCI_Gato.dll
+C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\obj\Debug\ECCI_Gato.pdb
