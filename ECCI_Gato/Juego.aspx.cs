@@ -14,7 +14,6 @@ namespace ECCI_Gato
         private int clickedByPlayerNo, clickNo;
         protected DataSet tabla;
 
-        //----------------------------------------------------------------------------------------------------------
         protected void Page_Load(object sender, EventArgs e)
         {
             Limpiartablero(false);
@@ -28,6 +27,24 @@ namespace ECCI_Gato
             Limpiartablero(true);
             clickNo = 0;
             gato = new ECCI_GatoService.ECCI_GatoPortClient();
+        }
+
+        private void movida(object Sender, int[] coordinadas)
+        {
+            clickNo += 1; 
+
+            if ((gato.jugadorActual()) == "X")
+            {
+                ((Button)Sender).Text = "X";
+            }
+            else
+            {
+                ((Button)Sender).Text = "O";
+            }
+     ((Button)Sender).Enabled = false; //Disable the button once it is clicked
+            string arreglo = coordinadas[0].ToString() + "," + coordinadas[1].ToString() + "," + gato.jugadorActual();
+            gato.mover(arreglo);
+            revisarGanador();
         }
 
         protected void Limpiartablero(bool a)
@@ -106,26 +123,6 @@ namespace ECCI_Gato
             movida(sender, coordinadas);
         }
 
-
-
-        //----------------------------------------------------------------------------------------------------------------
-        private void movida(object Sender, int[] coordinadas)
-        {
-            clickNo += 1; //Increase no. of clicks every time a button is clicked
-            string a = gato.jugadorActual();
-            if ((gato.jugadorActual()) == "X")
-            {
-                ((Button)Sender).Text = "X";
-            }
-            else
-            {
-                ((Button)Sender).Text = "O";
-            }
-            ((Button)Sender).Enabled = false; //Disable the button once it is clicked
-            string arreglo = coordinadas[0].ToString() + "," + coordinadas[1].ToString() + "," + gato.jugadorActual();
-            gato.mover(arreglo);
-            revisarGanador();
-        }
 
         private void revisarGanador()
         {
