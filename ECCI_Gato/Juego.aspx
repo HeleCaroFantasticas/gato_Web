@@ -75,9 +75,6 @@
         </tr>
     </table>
 
-
-    <asp:Button runat="server" ID="Button10" Text="Volver a Iniciar Juego" CssClass="btn btn-danger" OnClick="NuevoJuego" CausesValidation="false" />
-
     <div runat="server" id="infoGanador" visible="false">
         <br />
         <h2>Felicidades!</h2>

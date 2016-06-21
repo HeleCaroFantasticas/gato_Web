@@ -17,7 +17,7 @@ namespace ECCI_Gato
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
-                gato = new ECCI_GatoService.ECCI_GatoPortClient();
+               // gato = new ECCI_GatoService.ECCI_GatoPortClient();
                 Limpiartablero(false);
             }
             tabla = new DataSet();
@@ -25,17 +25,17 @@ namespace ECCI_Gato
         }
         public Juego()
         {
-
             gato = new ECCI_GatoService.ECCI_GatoPortClient();
-
         }
+
         protected void NuevoJuego(object sender, EventArgs e)
         {
             Limpiartablero(true);
             clickNo = 0;
-            //gato = new ECCI_GatoService.ECCI_GatoPortClient();
+            gato.Close();
             infoGanador.Visible = false;
             top10.Visible = false;
+            Button9.Enabled = false;
         }
 
         private void movida(object Sender, int[] coordinadas)
@@ -154,6 +154,7 @@ namespace ECCI_Gato
 
         private void desplegarGanador(int x, string jugador)
         {
+            Button9.Visible = false;
            // int x = 0;
             if (x == 0)
             {
