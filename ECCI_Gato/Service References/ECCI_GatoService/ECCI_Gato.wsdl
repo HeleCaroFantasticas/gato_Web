@@ -40,7 +40,7 @@
   <wsdl:message name="insertarJugadorBDOut" />
   <wsdl:message name="diezMejoresIn" />
   <wsdl:message name="diezMejoresOut">
-    <wsdl:part name="return" type="xsd:ArrayOfStrings" />
+    <wsdl:part name="return" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="jugadorActualIn" />
   <wsdl:message name="jugadorActualOut">
