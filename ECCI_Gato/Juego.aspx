@@ -102,7 +102,7 @@
             </thead>
             <tbody>
             <%int i = 1; %>
-            <%if (tabla.Tables.Count == 0)
+            <%if (tabla.Tables.Count != 0)
                 { %>
             <% foreach (DataRow row in tabla.Tables[0].Rows)
                                               { %>

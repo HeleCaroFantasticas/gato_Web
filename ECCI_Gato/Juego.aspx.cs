@@ -23,7 +23,6 @@ namespace ECCI_Gato
             tabla = new DataSet();
             DataBind();
             Top10();
-
         }
         public Juego()
         {
@@ -40,7 +39,7 @@ namespace ECCI_Gato
 
         private void movida(object Sender, int[] coordinadas)
         {
-            clickNo += 1; 
+            clickNo += 1;
 
             if ((gato.jugadorActual()) == "X")
             {
@@ -53,6 +52,7 @@ namespace ECCI_Gato
             ((Button)Sender).Enabled = false; //Disable the button once it is clicked
             string arreglo = coordinadas[0].ToString() + "," + coordinadas[1].ToString() + "," + gato.jugadorActual();
             gato.mover(arreglo);
+
             revisarGanador();
         }
 
