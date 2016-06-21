@@ -102,8 +102,7 @@
             </thead>
             <tbody>
             <%int i = 1; %>
-   <!--        
-    <%--    <% foreach(DataRow row in tabla.Tables[0].Rows) { %>
+            <% foreach(DataRow row in tabla.Tables[0].Rows) { %>
                 <tr>
                     <td><%= i %></td>
                     <td><%= row["Nombre"] %></td>
@@ -111,7 +110,6 @@
                 </tr>
                 <%i++; %>
             <% } %>
-   --%>    !-->
             </tbody>
         </table>
     </div>

@@ -16,10 +16,14 @@ namespace ECCI_Gato
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          //  Limpiartablero(false);
-            tabla = new DataSet();
+            if (!IsPostBack) {
+                Limpiartablero(false);
+                tabla = new DataSet();
+                gato = new ECCI_GatoService.ECCI_GatoPortClient();
+            }
+          
             DataBind();
-            //Top10();
+            Top10();
         }
         public Juego()
         {
@@ -165,8 +169,8 @@ namespace ECCI_Gato
 
         protected void guardarGanador(object sender, EventArgs e)
         {
-            gato.insertarJugadorBD(inputNombre.ToString());
-            gato.juegoTerminado();
+            string t = inputNombre.Value;
+            gato.insertarJugadorBD(inputNombre.Value);
         }
 
         private void Top10()
@@ -178,10 +182,12 @@ namespace ECCI_Gato
             string die = gato.diezMejores();
             string[] jugadores = die.Split('-');
             string[] temp;
-            for (int i = 0, j=0; i < jugadores.Length; i++, j+=2) {
+            for (int i = 0, j = 0; i < jugadores.Length; i++, j += 2)
+            {
                 temp = jugadores[i].Split(',');
                 table.Rows.Add(temp[0], temp[1]);
             }
+            tabla.Tables.Add(table);
         }
     }
 }
