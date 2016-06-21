@@ -102,14 +102,18 @@
             </thead>
             <tbody>
             <%int i = 1; %>
-            <% foreach(DataRow row in tabla.Tables[0].Rows) { %>
+            <%if (tabla.Tables.Count == 0)
+                { %>
+            <% foreach (DataRow row in tabla.Tables[0].Rows)
+                                              { %>
                 <tr>
                     <td><%= i %></td>
                     <td><%= row["Nombre"] %></td>
                     <td><%= row["Tiempo"] %></td>
                 </tr>
                 <%i++; %>
-            <% } %>
+            <% }
+            }%>
             </tbody>
         </table>
     </div>

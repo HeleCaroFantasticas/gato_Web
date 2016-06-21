@@ -17,13 +17,13 @@ namespace ECCI_Gato
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
-                Limpiartablero(false);
-                tabla = new DataSet();
                 gato = new ECCI_GatoService.ECCI_GatoPortClient();
+                Limpiartablero(false);
             }
-          
+            tabla = new DataSet();
             DataBind();
             Top10();
+
         }
         public Juego()
         {
