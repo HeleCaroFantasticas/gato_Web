@@ -16,7 +16,7 @@ namespace ECCI_Gato
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Limpiartablero(false);
+          //  Limpiartablero(false);
             tabla = new DataSet();
             DataBind();
             //Top10();
@@ -46,7 +46,7 @@ namespace ECCI_Gato
             {
                 ((Button)Sender).Text = "O";
             }
-     ((Button)Sender).Enabled = false; //Disable the button once it is clicked
+          //  ((Button)Sender).Enabled = false; //Disable the button once it is clicked
             string arreglo = coordinadas[0].ToString() + "," + coordinadas[1].ToString() + "," + gato.jugadorActual();
             gato.mover(arreglo);
             revisarGanador();
