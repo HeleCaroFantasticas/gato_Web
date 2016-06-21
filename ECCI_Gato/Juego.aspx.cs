@@ -21,12 +21,17 @@ namespace ECCI_Gato
             DataBind();
             //Top10();
         }
+        public Juego()
+        {
 
+            gato = new ECCI_GatoService.ECCI_GatoPortClient();
+
+        }
         protected void NuevoJuego(object sender, EventArgs e)
         {
             Limpiartablero(true);
             clickNo = 0;
-            gato = new ECCI_GatoService.ECCI_GatoPortClient();
+            //gato = new ECCI_GatoService.ECCI_GatoPortClient();
         }
 
         private void movida(object Sender, int[] coordinadas)

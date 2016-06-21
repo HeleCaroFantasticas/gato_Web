@@ -93,7 +93,6 @@ C:\Users\Carolina\documents\visual studio 2015\Projects\ECCI_Gato\ECCI_Gato\obj\
 C:\Users\Helena\Documents\GitHub\gato_Web\ECCI_Gato\obj\Debug\ECCI_Gato.csprojResolveAssemblyReference.cache
 C:\Users\Helena\Documents\GitHub\gato_Web\ECCI_Gato\obj\Debug\ECCI_Gato.dll
 C:\Users\Helena\Documents\GitHub\gato_Web\ECCI_Gato\obj\Debug\ECCI_Gato.pdb
-C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\obj\Debug\ECCI_Gato.csprojResolveAssemblyReference.cache
 C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\bin\ApplicationInsights.config
 C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\bin\roslyn\csc.exe
 C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -184,5 +183,6 @@ C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\bin\es\Microsoft.Owin.Secu
 C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\obj\Debug\ECCI_Gato.csprojResolveAssemblyReference.cache
 C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\obj\Debug\ECCI_Gato.dll
 C:\Users\Carolina\Documents\GitHub\gato_Web\ECCI_Gato\obj\Debug\ECCI_Gato.pdb
