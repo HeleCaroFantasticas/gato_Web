@@ -52,11 +52,7 @@ namespace ECCI_Gato
             ((Button)Sender).Enabled = false; //Disable the button once it is clicked
             string arreglo = coordinadas[0].ToString() + "," + coordinadas[1].ToString() + "," + gato.jugadorActual();
             gato.mover(arreglo);
-<<<<<<< HEAD
 
-=======
-            string a = gato.jugadorActual();
->>>>>>> origin/master
             revisarGanador();
         }
 
@@ -139,22 +135,19 @@ namespace ECCI_Gato
 
         private void revisarGanador()
         {
-            if (clickNo > 4)
+            if ((gato.terminado()) == "X")
             {
-               if ((gato.terminado()) == "X")
-                {
-                    desplegarGanador(1, "X");
-                }
+                desplegarGanador(1, "X");
+            }
 
-                if ((gato.terminado()) == "O")
-                {
-                    desplegarGanador(1, "O");
-                }
+            if ((gato.terminado()) == "O")
+            {
+                desplegarGanador(1, "O");
+            }
 
-                if ((gato.terminado()) == "Empate")
-                {
-                    desplegarGanador(1, "Empate");
-                }
+            if ((gato.terminado()) == "Empate")
+            {
+                desplegarGanador(1, "Empate");
             }
         }
 
@@ -163,11 +156,13 @@ namespace ECCI_Gato
            // int x = 0;
             if (x == 0)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Fue Un Empate", "alertMessage();", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "Fue Un Empate", "alertMessage();", true);
             }
             if (x == 1)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "El ganador fue: " + jugador, "alertMessage();", true);
+                //ScriptManager.RegisterStartupScript(this, GetType(), "El ganador fue: " + jugador, "alertMessage();", true);
+               // ClientScript.RegisterStartupScript(this.GetType(), "Fue Un Empate", "alertMessage();", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "El ganador fue: " + jugador + "');", true);
             }
         }
 
