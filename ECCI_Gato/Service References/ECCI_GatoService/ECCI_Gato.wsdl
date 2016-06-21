@@ -31,7 +31,7 @@
     <wsdl:part name="return" type="xsd:MatrixOfStrings" />
   </wsdl:message>
   <wsdl:message name="moverIn">
-    <wsdl:part name="return" type="xsd:ArrayOfStrings" />
+    <wsdl:part name="return" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="moverOut" />
   <wsdl:message name="insertarJugadorBDIn">
