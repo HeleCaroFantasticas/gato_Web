@@ -12,13 +12,14 @@ namespace ECCI_Gato
     {
         private ECCI_GatoService.ECCI_GatoPortClient gato;
         private int clickedByPlayerNo, clickNo;
-        public DataSet tabla;
+        protected DataSet tabla;
 
         //----------------------------------------------------------------------------------------------------------
         protected void Page_Load(object sender, EventArgs e)
         {
             Limpiartablero(false);
             tabla = new DataSet();
+            DataBind();
             //Top10();
         }
 
