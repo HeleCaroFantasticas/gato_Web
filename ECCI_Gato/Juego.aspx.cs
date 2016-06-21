@@ -22,7 +22,6 @@ namespace ECCI_Gato
             }
             tabla = new DataSet();
             DataBind();
-            Top10();
         }
         public Juego()
         {
@@ -35,6 +34,8 @@ namespace ECCI_Gato
             Limpiartablero(true);
             clickNo = 0;
             //gato = new ECCI_GatoService.ECCI_GatoPortClient();
+            infoGanador.Visible = false;
+            top10.Visible = false;
         }
 
         private void movida(object Sender, int[] coordinadas)
@@ -156,13 +157,12 @@ namespace ECCI_Gato
            // int x = 0;
             if (x == 0)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "Fue Un Empate", "alertMessage();", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Fue un empate');", true);
             }
             if (x == 1)
             {
-                //ScriptManager.RegisterStartupScript(this, GetType(), "El ganador fue: " + jugador, "alertMessage();", true);
-               // ClientScript.RegisterStartupScript(this.GetType(), "Fue Un Empate", "alertMessage();", true);
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "El ganador fue: " + jugador + "');", true);
+                infoGanador.Visible = true;
             }
         }
 
@@ -170,6 +170,8 @@ namespace ECCI_Gato
         {
             string t = inputNombre.Value;
             gato.insertarJugadorBD(inputNombre.Value);
+            Top10();
+            top10.Visible = true;
         }
 
         private void Top10()
@@ -187,6 +189,7 @@ namespace ECCI_Gato
                 table.Rows.Add(temp[0], temp[1]);
             }
             tabla.Tables.Add(table);
+            gato.juegoTerminado();
         }
     }
 }

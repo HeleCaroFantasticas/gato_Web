@@ -78,7 +78,7 @@
 
     <asp:Button runat="server" ID="Button10" Text="Volver a Iniciar Juego" CssClass="btn btn-danger" OnClick="NuevoJuego" CausesValidation="false" />
 
-    <div id="infoGanador">
+    <div runat="server" id="infoGanador" visible="false">
         <br />
         <h2>Felicidades!</h2>
         Ganador, por favor ingrese su nombre.
@@ -89,7 +89,7 @@
 
 
 
-    <div id="top10">
+    <div runat="server" id="top10" visible="false">
         <br />
         <h2>Top 10 de Jugadores</h2>
         <table class="table table-striped table-hover">
