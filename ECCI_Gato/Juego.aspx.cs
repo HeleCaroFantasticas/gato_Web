@@ -11,11 +11,15 @@ namespace ECCI_Gato
     public partial class Juego : System.Web.UI.Page
     {
         private ECCI_GatoService.ECCI_GatoPortClient gato;
-
         private int clickedByPlayerNo, clickNo;
+        public DataSet tabla;
+
+        //----------------------------------------------------------------------------------------------------------
         protected void Page_Load(object sender, EventArgs e)
         {
             Limpiartablero(false);
+            tabla = new DataSet();
+            //Top10();
         }
 
         protected void NuevoJuego(object sender, EventArgs e)
@@ -46,6 +50,7 @@ namespace ECCI_Gato
             Button0.Text = "";
             Button0.Enabled = a;
         }
+
         protected void btn0_Click(object sender, EventArgs e)
         {
             int[] coordinadas = { 0, 0 };
@@ -100,15 +105,17 @@ namespace ECCI_Gato
             movida(sender, coordinadas);
         }
 
+
+
+        //----------------------------------------------------------------------------------------------------------------
         private void movida(object Sender, int[] coordinadas)
         {
             clickNo += 1; //Increase no. of clicks every time a button is clicked
 
-
             if ((gato.jugadorActual()) == "X")
                 ((Button)Sender).Text = "X";
             else
-                ((Button)Sender).Text = "0";
+                ((Button)Sender).Text = "O";
             ((Button)Sender).Enabled = false; //Disable the button once it is clicked
             string arreglo = coordinadas[0].ToString() + "," + coordinadas[1].ToString() + "," + gato.jugadorActual();
             gato.mover(arreglo);
@@ -139,30 +146,35 @@ namespace ECCI_Gato
         private void desplegarGanador(int x, string jugador)
         {
            // int x = 0;
-
             if (x == 0)
             {
-
                 ScriptManager.RegisterStartupScript(this, GetType(), "Fue Un Empate", "alertMessage();", true);
-
             }
             if (x == 1)
             {
-
                 ScriptManager.RegisterStartupScript(this, GetType(), "El ganador fue: " + jugador, "alertMessage();", true);
             }
-
         }
 
         protected void guardarGanador(object sender, EventArgs e)
         {
-
-
+            gato.insertarJugadorBD(inputNombre.ToString());
+            gato.juegoTerminado();
         }
 
         private void Top10()
         {
+            DataTable table = new DataTable();
+            table.Columns.Add("Nombre");
+            table.Columns.Add("Tiempo");
 
+            string die = gato.diezMejores();
+            string[] jugadores = die.Split('-');
+            string[] temp;
+            for (int i = 0, j=0; i < jugadores.Length; i++, j+=2) {
+                temp = jugadores[i].Split(',');
+                table.Rows.Add(temp[0], temp[1]);
+            }
         }
     }
 }
